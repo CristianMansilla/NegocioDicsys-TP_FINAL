@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div id="productos">
+  <h1>{{ nombreCategoria }}</h1>
+
+  <button class="createProduct" (click)="navegateCreateProduct()"><i class="fa-solid fa-plus"></i></button>
+
+  <div *ngIf="productsByCategory.length === 0">
+    <p>No hay productos cargados.</p>
+  </div>
+
+  <div id="productList" *ngIf="productsByCategory.length > 0">
+    <article class="productCard" *ngFor="let product of productsByCategory">
+      <div class="productImage">
+        <img src="{{product.imagen}}" alt="{{ product.nombre }}">
+      </div>
+      <h2 class="productName">{{ product.nombre }}</h2>
+      <div class="productDetails">
+        <span>Precio: ${{ product.precio }}</span>
+        <span>Stock: {{ product.stock }}</span>
+        <span>Fecha de Vencimiento: {{ product.fecha_vencimiento | date:'dd/MM/yyyy' }}</span>
+      </div>
+      <div class="productActions">
+        <button class="addToCart" (click)="addToCart()"><i class="fa-solid fa-cart-shopping"></i></button>
+        <button class="editProduct" (click)="navegateEditProduct(product.id)"><i class="fa-solid fa-pen-to-square"></i></button>
+        <button class="deleteProduct" (click)="deleteProducts(product.id)"><i class="fa-solid fa-trash"></i></button>
+      </div>
+    </article>
+  </div>
+</div>
+<app-footer></app-footer>

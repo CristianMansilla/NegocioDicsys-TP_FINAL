@@ -1,0 +1,18 @@
+<div>
+    <h2>Editar Producto</h2>
+    <form (ngSubmit)="updateProduct()">
+        <label for="nombre">Nombre</label>
+        <input type="text" [(ngModel)]="product.nombre" name="nombre" required>
+
+        <label for="fecha_vencimiento">Fecha de Vencimiento</label>
+        <input type="date" [(ngModel)]="product.fecha_vencimiento" name="fecha_vencimiento" required>
+
+        <label for="precio">Precio</label>
+        <input type="number" [(ngModel)]="product.precio" name="precio" required>
+
+        <label for="stock">Stock</label>
+        <input type="number" [(ngModel)]="product.stock" name="stock" required>
+
+        <button type="submit">Actualizar Producto</button>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+<app-header></app-header>
+<app-slider></app-slider>
+<div id="home">
+  <section id="contenido">
+    <h1>NUESTRAS CATEGORÍAS</h1>
+    <div id="listCards">
+      <div class="card" *ngFor="let categoria of categorias">
+        <div class="card_image">
+          <img src="{{categoria.imagen}}" alt="{{categoria.nombre}}">
+        </div>
+        <h3 class="card_title">{{categoria.nombre}}</h3>
+        <button class="card_button" (click)="navegateProducts(categoria)">Ver sus productos</button>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

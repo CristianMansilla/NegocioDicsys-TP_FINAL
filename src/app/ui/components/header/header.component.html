@@ -1,0 +1,14 @@
+<header>
+  <div class="navbar">
+    <div (click)="navegateHome()" class="logo">
+      <span>{{ globalText.title }}</span>
+    </div>
+    <nav class="navigation">
+      <ul>
+        <li (click)="navegateHome()">{{ globalText.categories }}</li>
+        <li (click)="addToCart()">{{ globalText.cart }}</li>
+        <li (click)="login()">{{ globalText.login }}</li>
+      </ul>
+    </nav>
+  </div>
+</header>
